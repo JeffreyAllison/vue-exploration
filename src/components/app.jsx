@@ -11,6 +11,16 @@ import About from './About/About.jsx';
 
 export default function App() {
   return (
-    <Router></Router>
-  <div>Hello World, hello kitty, hello clarice</div>);
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="list" element={<List />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+      <div>Hello World, hello kitty, hello clarice</div>
+    </Router>
+  );
 }
