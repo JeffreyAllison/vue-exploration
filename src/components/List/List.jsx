@@ -1,5 +1,9 @@
-import React from 'react';
+import styles from './List.css';
 
 export default function List() {
-  return <div>List page list page list page</div>;
+  return (
+    <div className={styles.List}>
+      <p>List page list page list page</p>
+    </div>
+  );
 }

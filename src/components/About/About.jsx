@@ -1,5 +1,9 @@
-import React from 'react';
+import styles from './About.css';
 
 export default function About() {
-  return <div>About page about page about page</div>;
+  return (
+    <div className={styles.About}>
+      <p>About page about page about page</p>
+    </div>
+  );
 }
