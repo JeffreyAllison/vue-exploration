@@ -9,4 +9,5 @@
 
 .NavContainer {
   justify-self: end;
+  border: 1px black solid;
 }
