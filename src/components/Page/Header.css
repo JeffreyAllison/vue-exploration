@@ -1,0 +1,13 @@
+.Header {
+  background: lime;
+  padding: 15px;
+  top: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: center;
+}
+
+.NavContainer {
+  justify-self: end;
+  border: 1px black solid;
+}
