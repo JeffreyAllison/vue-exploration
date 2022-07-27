@@ -1,5 +1,5 @@
 .Header {
-  background: lime;
+  background: var(--header-color);
   padding: 15px;
   top: 0;
   display: grid;
@@ -10,4 +10,5 @@
 .NavContainer {
   justify-self: end;
   border: 1px black solid;
+  background: var(--container-color);
 }

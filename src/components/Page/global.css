@@ -4,5 +4,15 @@
 
 body {
   height: 100vh;
-  background: rgb(238, 160, 160);
+  background: var(--body-color);
+}
+
+:root {
+  font-family: 'Rowdies', cursive;
+
+  --header-color: #91f9e5ff;
+  --line-color: #76f7bfff;
+  --color: rgb(66, 126, 96);
+  --container-color: rgb(2, 180, 76);
+  --body-color: #3f4531ff;
 }
