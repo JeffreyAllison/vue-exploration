@@ -15,4 +15,9 @@ body {
   --color: rgb(66, 126, 96);
   --container-color: rgb(2, 180, 76);
   --body-color: #3f4531ff;
+
+  --padding: 20px;
+  @media (min-width: 750px) {
+    --padding: 40px;
+  }
 }
