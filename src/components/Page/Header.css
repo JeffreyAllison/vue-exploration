@@ -5,10 +5,18 @@
   display: grid;
   grid-template-columns: auto auto;
   justify-items: center;
+
+  @media (min-width: 750px) {
+    padding-left: var(--padding);
+  }
 }
 
 .NavContainer {
   justify-self: end;
   border: 1px black solid;
   background: var(--container-color);
+
+  @media (min-width: 750px) {
+    padding-left: var(--padding);
+  }
 }

@@ -1,3 +1,4 @@
 .Home {
   background: var(--line-color);
+  padding: var(--padding);
 }
