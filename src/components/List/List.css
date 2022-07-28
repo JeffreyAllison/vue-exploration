@@ -1,3 +1,4 @@
 .List {
-  background: cornsilk;
+  background: var(--line-color);
+  padding: var(--padding);
 }
