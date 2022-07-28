@@ -14,7 +14,7 @@
 .NavContainer {
   justify-self: end;
   border: 1px black solid;
-  background: var(--container-color);
+  background: var(--line-color);
 
   @media (min-width: 750px) {
     padding-left: var(--padding);
