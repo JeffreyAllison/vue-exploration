@@ -1,5 +1,5 @@
 const POKEDEX_URL = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
-const POKETYPES_URL = `${API_URL}/types`;
+const POKETYPES_URL = `${POKEDEX_URL}/types`;
 
 export async function getPokedex(searchParams, page) {
   return await get(`${POKEDEX_URL}?${searchParams.toString()}&page=${page}`);
