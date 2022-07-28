@@ -46,7 +46,7 @@ export default function About() {
           placeholder="tell us about you jeff"
         />
 
-        <FormButton>Submit</FormButton>
+        <FormButton>Click here to Submit</FormButton>
       </form>
     </section>
   );
