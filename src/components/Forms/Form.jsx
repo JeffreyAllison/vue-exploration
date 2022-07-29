@@ -29,6 +29,14 @@ function Option({ text, type, ...rest }) {
   );
 }
 
+export function CheckboxOption(props) {
+  return <Option type="checkbox" {...props} />;
+}
+
+export function RadioOption(props) {
+  return <Option type="radio" {...props} />;
+}
+
 export function CheckboxControl({ label, text, ...rest }) {
   return (
     <div className={styles.FormControl}>
