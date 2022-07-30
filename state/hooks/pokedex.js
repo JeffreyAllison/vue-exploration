@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { getPokedex, getTypes } from '../services/pokedex-service.js';
 
-export async function useTypes() {
+export function useTypes() {
   const [types, setTypes] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState([]);
 
   useEffect(() => {
     const fetch = async () => {
-      const { data, error } = await getTypes();
+      const { data } = await getTypes();
       setTypes(data);
       setError(error);
     };

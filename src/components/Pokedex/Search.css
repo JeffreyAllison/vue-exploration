@@ -1,0 +1,8 @@
+.Search {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(130px, 180px))
+    60px;
+  align-items: end;
+  gap: 3px;
+}
