@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Children, cloneElement } from 'react';
 import classNames from 'classnames';
 import styles from './Form.css';
@@ -16,6 +15,7 @@ function FormControl({ label, children, className: customClassName }) {
 
 function LabelText({ text, as: Tag = 'span' }) {
   if (!text) return null;
+
   const className = classNames(styles.Label, 'label-text');
   return <Tag className={className}>{text}</Tag>;
 }
@@ -37,14 +37,11 @@ export function RadioOption(props) {
   return <Option type="radio" {...props} />;
 }
 
-export function CheckboxControl({ label, text, ...rest }) {
+export function CheckboxControl({ label, ...rest }) {
   return (
     <div className={styles.FormControl}>
       <LabelText text={label} />
-      <label className={styles.CheckboxLabel}>
-        <input type="checkbox" {...rest} />
-        {text}
-      </label>
+      <CheckboxOption {...rest} />
     </div>
   );
 }
@@ -98,11 +95,16 @@ export function TextAreaControl({ label, ...rest }) {
 
 export function FormButton({ children, className: customClassName, ...rest }) {
   const className = classNames(styles.FormButton, customClassName);
+
   return (
     <button className={className} {...rest}>
       {children}
     </button>
   );
+}
+
+export function FormButtonControl(props) {
+  return <FormButton className={styles.FormControl} {...props} />;
 }
 
 export function Fieldset({ legend, children }) {

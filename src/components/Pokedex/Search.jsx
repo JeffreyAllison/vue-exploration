@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useSearch } from '../../state/hooks/url.js';
-import { useTypes } from '../../state/hooks/pokedex.js';
+import { useSearch } from '../../../state/hooks/url.js';
+import { useTypes } from '../../../state/hooks/pokedex.js';
 import { InputControl, SelectControl, FormButton } from '../Forms/Form.jsx';
 import styles from './Search.css';
 
@@ -9,7 +9,7 @@ export default function Search() {
   const { params, setParams } = useSearch();
   const [formData, setFormData] = useState({});
   const { pokemon, type } = params;
-
+  console.log('search component', types);
   useEffect(() => {
     setFormData({ pokemon, type });
   }, [pokemon, type]);
