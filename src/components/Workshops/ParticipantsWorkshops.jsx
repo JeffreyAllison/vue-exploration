@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Navigation from '../Page/Navigation.jsx';
-import styles from './ParticipantWorkshops.css';
+import styles from './ParticipantsWorkshops.css';
 
 const navigation = [
   { to: '', label: 'Workshops' },
