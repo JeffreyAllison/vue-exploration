@@ -9,7 +9,6 @@ export default function Search() {
   const { params, setParams } = useSearch();
   const [formData, setFormData] = useState({});
   const { pokemon, type } = params;
-  console.log('search component', types);
   useEffect(() => {
     setFormData({ pokemon, type });
   }, [pokemon, type]);
