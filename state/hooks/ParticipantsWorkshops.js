@@ -6,6 +6,7 @@ import {
   createWorkshop,
   updateWorkshop,
 } from '../services/workshop-service.js';
+import { showSuccess, showError } from '../services/toaster.js';
 
 export function useWorkshops() {
   const [error, setError] = useState(null);
