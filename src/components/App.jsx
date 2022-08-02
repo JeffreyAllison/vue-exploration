@@ -4,6 +4,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import Layout from './Page/Layout.jsx';
 import Home from './Home/Home.jsx';
 import List from './List/List.jsx';
@@ -16,6 +17,7 @@ import Workshops from './Workshops/Workshops.jsx';
 export default function App() {
   return (
     <Router>
+      <Toaster />
       <WorkshopProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
