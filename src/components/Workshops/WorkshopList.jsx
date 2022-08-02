@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   useWorkshops,
-  useWorkshopsActions,
+  useWorkshopActions,
 } from '../../../state/hooks/ParticipantsWorkshops';
 import { InputControl } from '../Forms/Form';
 // import styles from './WorkshopList.css';
@@ -21,7 +21,7 @@ export default function WorkshopList() {
 }
 
 function Workshop({ workshop }) {
-  const { remove, update } = useWorkshopsActions();
+  const { remove, update } = useWorkshopActions();
   const [editing, setEditing] = useState(false);
   const ref = useRef();
   const [topic, setTopic] = useState(workshop.topic);
