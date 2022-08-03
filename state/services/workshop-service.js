@@ -1,20 +1,13 @@
-import createClient from './client.js';
+import client from './client.js';
 
 export async function getWorkshops() {
-  const response = await createClient.from('workshops').select(`
-  id,
-  topic,
-  participants:participants(
-    id,
-    workshopId:workshop_id,
-    name
-  )
-  `);
+  const response = await client.from('workshops').select('*');
+  console.log('response', response);
   return response;
 }
 
 export async function deleteWorkshop(id) {
-  const response = await createClient
+  const response = await client
     .from('workshops')
     .delete()
     .eq('id', id)
@@ -23,15 +16,12 @@ export async function deleteWorkshop(id) {
 }
 
 export async function createWorkshop(workshop) {
-  const response = await createClient
-    .from('workshops')
-    .insert(workshop)
-    .single();
+  const response = await client.from('workshops').insert(workshop).single();
   return response;
 }
 
 export async function updateWorkshop(workshop) {
-  const response = await createClient
+  const response = await client
     .from('workshops')
     .update(workshop)
     .eq('id', workshop.id)

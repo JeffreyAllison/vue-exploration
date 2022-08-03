@@ -1,5 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
-import { WorkshopContext } from '../context/WorkshopsContext';
+import { useContext, useEffect, useMemo, useState } from 'react';
+import {
+  WorkshopContext,
+  WorkshopDispatchContext,
+} from '../context/WorkshopsContext';
 import {
   getWorkshops,
   deleteWorkshop,
@@ -10,7 +13,8 @@ import { showSuccess, showError } from '../services/toaster.js';
 
 export function useWorkshops() {
   const [error, setError] = useState(null);
-  const { workshops, workshopDispatch } = useContext(WorkshopContext);
+  const { workshops } = useContext(WorkshopContext);
+  const { workshopDispatch } = useContext(WorkshopDispatchContext);
 
   useEffect(() => {
     if (workshops) return;
@@ -49,7 +53,7 @@ function createDispatchActions(dispatch) {
 }
 
 export function useWorkshopActions() {
-  const { workshopDispatch } = useContext(WorkshopContext);
+  const { workshopDispatch } = useContext(WorkshopDispatchContext);
 
   const createAction = createDispatchActions(workshopDispatch);
 
@@ -71,5 +75,5 @@ export function useWorkshopActions() {
     success: (data) => `Updated ${data.topic}`,
   });
 
-  return { add, remove, update };
+  return useMemo(() => ({ add, remove, update }), [workshopDispatch]);
 }

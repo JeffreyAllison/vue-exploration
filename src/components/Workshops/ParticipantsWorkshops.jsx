@@ -4,7 +4,7 @@ import styles from './ParticipantsWorkshops.css';
 
 const navigation = [
   { to: '', label: 'Workshops' },
-  { to: 'participants', label: 'Participants' },
+  // { to: 'participants', label: 'Participants' },
 ];
 
 export default function ParticipantsWorkshops() {

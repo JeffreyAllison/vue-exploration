@@ -1,6 +1,7 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useMemo, useReducer } from 'react';
 
 export const WorkshopContext = createContext();
+export const WorkshopDispatchContext = createContext();
 
 function reducer(list, { type, payload }) {
   switch (type) {
@@ -19,18 +20,25 @@ function reducer(list, { type, payload }) {
 
 export default function WorkshopProvider({ children }) {
   const [workshops, workshopDispatch] = useReducer(reducer, null);
-  const [participants, participantsDispatch] = useReducer(reducer, null);
+  // const [participants, participantsDispatch] = useReducer(reducer, null);
 
-  const value = {
+  const stateValue = {
     workshops,
-    workshopDispatch,
-    participants,
-    participantsDispatch,
+    // participants,
+    // participantsDispatch,
   };
+  const dispatchValue = useMemo(
+    () => ({
+      workshopDispatch,
+    }),
+    [workshopDispatch]
+  );
 
   return (
-    <WorkshopContext.Provider value={value}>
-      {children}
+    <WorkshopContext.Provider value={stateValue}>
+      <WorkshopDispatchContext.Provider value={dispatchValue}>
+        {children}
+      </WorkshopDispatchContext.Provider>
     </WorkshopContext.Provider>
   );
 }
