@@ -2,7 +2,6 @@ import client from './client.js';
 
 export async function getWorkshops() {
   const response = await client.from('workshops').select('*');
-  console.log('response', response);
   return response;
 }
 

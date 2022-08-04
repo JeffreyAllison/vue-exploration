@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useWorkshopActions } from '../../state/hooks/ParticipantsWorkshops.js';
+import { useWorkshopActions } from '../../../state/hooks/ParticipantsWorkshops.js';
 import { InputControl, FormButton } from '../Forms/Form.jsx';
-import styles from './AddFamily.css';
+import styles from './AddWorkshop.css';
 
 export default function AddWorkshop() {
   const { add } = useWorkshopActions();

@@ -20,12 +20,9 @@ function reducer(list, { type, payload }) {
 
 export default function WorkshopProvider({ children }) {
   const [workshops, workshopDispatch] = useReducer(reducer, null);
-  // const [participants, participantsDispatch] = useReducer(reducer, null);
 
   const stateValue = {
     workshops,
-    // participants,
-    // participantsDispatch,
   };
   const dispatchValue = useMemo(
     () => ({

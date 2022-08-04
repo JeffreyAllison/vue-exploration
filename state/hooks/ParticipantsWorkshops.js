@@ -65,7 +65,7 @@ export function useWorkshopActions() {
 
   const remove = createAction({
     service: deleteWorkshop,
-    type: 'delete',
+    type: 'remove',
     success: (data) => `Deleted ${data.topic}`,
   });
 

@@ -4,7 +4,7 @@ import {
   useWorkshopActions,
 } from '../../../state/hooks/ParticipantsWorkshops';
 import { InputControl } from '../Forms/Form';
-// import styles from './WorkshopList.css';
+import styles from './WorkshopList.css';
 
 export default function WorkshopList() {
   const { workshops } = useWorkshops();
@@ -12,7 +12,7 @@ export default function WorkshopList() {
   if (!workshops) return null;
 
   return (
-    <ul>
+    <ul className={styles.WorkshopList}>
       {workshops.map((workshop) => (
         <Workshop key={workshop.id} workshop={workshop} />
       ))}
