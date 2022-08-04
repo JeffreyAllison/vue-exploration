@@ -1,4 +1,4 @@
-import { Children, cloneElement } from 'react';
+import { Children, cloneElement, forwardRef } from 'react';
 import classNames from 'classnames';
 import styles from './Form.css';
 
@@ -67,13 +67,23 @@ export function OptionGroupControl({ label, name, size = '100px', children }) {
   );
 }
 
-export function InputControl({ label, className, value, ...rest }) {
+const verifyValue = (props) => {
+  if (Object.prototype.hasOwnProperty.call(props, 'value'))
+    props.value = props.value ?? '';
+};
+
+export const InputControl = forwardRef((props, ref) => {
+  const { label, className, children, ...rest } = props;
+  verifyValue(rest);
   return (
     <FormControl label={label} className={className}>
-      <input value={value || ''} {...rest} />
+      <input ref={ref} {...rest} />
+      {children}
     </FormControl>
   );
-}
+});
+
+InputControl.displayName = 'InputControl';
 
 export function SelectControl({ label, children, value, ...rest }) {
   return (
