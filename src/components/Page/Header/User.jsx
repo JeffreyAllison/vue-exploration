@@ -21,7 +21,7 @@ export default function Menu() {
       User
       <button onClick={handleClick}>🙂</button>
       <div className={styles.UserMenu}>
-        <Link to="user" onClick={signOut}>
+        <Link to="/" onClick={signOut}>
           Sign Out
         </Link>
       </div>
