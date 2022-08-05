@@ -1,10 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
-import {
-  InputControl,
-  FormButton,
-} from '../../components/Forms/FormControls.jsx';
-import { useForm } from '../../state/hooks/formData.js';
-import { useAuth } from '../../state/hooks/userAuth.js';
+import { InputControl, FormButton } from '../../components/Forms/Form.jsx';
+import { useForm } from '../../../state/hooks/formData.js';
+import { useAuth } from '../../../state/hooks/userAuth.js';
 import styles from './Auth.css';
 
 export default function Auth() {
