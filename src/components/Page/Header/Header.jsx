@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import styles from './Header.css';
-import Navigation from './Navigation';
+import Navigation from '../Navigation';
+import User from './User.jsx';
 
 export default function Header() {
   return (
@@ -10,6 +10,7 @@ export default function Header() {
         <div className={styles.NavContainer}>
           <Navigation />
         </div>
+        <User />
       </header>
     </>
   );
