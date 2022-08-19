@@ -1,7 +1,0 @@
-.ParticipantsWorkshops {
-  padding: var(--padding);
-  padding-top: var(--padding-half);
-
-  display: grid;
-  gap: var(--padding-half);
-}
